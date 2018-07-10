@@ -2,6 +2,9 @@
 
 /* Basic CSS Layout for All Pages */
 
+* {
+    box-sizing: border-box;
+}
 
 body {
     background: url('../images/whirlpool.png');
@@ -45,7 +48,7 @@ body {
 }
 
 .nav-about, .nav-portfolio, .nav-contact {
-    float: right;
+    display: inline-block;
 
 }
 a {
@@ -64,7 +67,21 @@ a:hover {
     border: 1px solid #dddddd;
     overflow: hidden; 
 }
+.container-portfolio {
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden; 
+}
 
+.con-port {
+    width: 860px;
+    height: 650px;
+    background-color: white;
+    border: 1px solid #dddddd;
+    margin: 50px 0;
+
+
+}
 #line {
     margin: 10px 10px;
     color: #cccccc;
@@ -99,9 +116,9 @@ h2 {
 
 #bio-image {
     padding: 20px;
-    overflow: hidden;
     float: left;
 }
+
 
 p {
     margin: 20px 15px;
@@ -115,9 +132,6 @@ p {
 
 
 /* CSS for Portfolio Page */
-* {
-    box-sizing: border-box;
-}
 
 .china:hover {
     background: pink;
@@ -157,13 +171,6 @@ p {
     float: left;
 }
 
-/* Clearfix (clear floats) */
-.img-2::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
 .img-3 {
     background: url('../images/iceland-pic.jpg');
     background-position: center;
@@ -184,6 +191,12 @@ p {
 
 /* Clearfix (clear floats) */
 .img-4::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.img-2::after {
     content: "";
     clear: both;
     display: table;
@@ -251,135 +264,153 @@ form .submit {
 
 
 
-/* Media Queries */
+/* MEDIA QUERIES */
 
 /* Desktop View */
 @media screen and (max-width: 980px) {
     .header {
-      width: 100%;
+      width: 100;
     }
     .header-content {
-        width: 100%;
+        width: 90%;
         position: relative;
-        }
+    }
+
     .nav {
         position: absolute;
         right: 5%;  
     }
 
     .container {
-        width: 100%;
-        margin: 3% 5%;
+        width: 90%;
+        margin: 5%;
     }
 
-.form-control {
+    #contact-form {
         width: 100%;
-        margin-left: 3%;
+        height: 60%;
+    }
+
+    .form-control {
+        width: 85%;
+        margin-left: 5%;
     }
     
     .enter-name, .enter-email, .enter-message {
-        margin-left: 3%;
+        margin-left: 5%;
     }
-
-    .china, .portugal, .iceland, .vietnam {
-        width: 28%;
-    }
-
-
   }
 
 
 /* Tablet View */
+
+
   @media screen and (max-width: 768px) {
 
     .header{
         width: 100%;
     }
     .header-content {
-        width: 100%;
+        width: 88%;
         position: relative;
         }
+
     .container {
-        width: 100%;
-        margin: 3% 5%;
-        position: relative;
+        width: 88%;
+        margin: 5%;
     }
+
     .nav {
         position: absolute;
         right: 5%;  
     }
-
-    .china, .portugal, .iceland, .vietnam {
-        width: 27.5%;
-    }
    
-    .form {
-        width: 90%;
-    }
-    .form-control {
+    #contact-form {
         width: 100%;
-        margin-left: 3%;
-        position: absolute;
+        height: 60%;
     }
+
+    .form-control {
+        width: 85%;
+        margin-left: 5%;
+    }
+    
     form .submit {
         font-size: 15px;
         width: 20%;
     }
     .enter-name, .enter-email, .enter-message {
-        margin-left: 3%;
+        margin-left: 5%;
         font-size: 14px;
     }
-
 
   }
 
 /* Mobile View */
   @media screen and (max-width: 640px) {
-    .header {
-        width: 100%;
-        position: static;
-    }
+
     .header-content {
         width: 100%;
     }
+
     .header-name {
-        width: 100%;
+        width: 100%; 
     }
 
     .nav {
-        background: white;
         width: 100%;
-        color:#777777;
+        position: static;
+    }
+
+    .nav li {
+        display: inline-block;
+
+
     }
 
     .container {
-        width: 100%;
-        margin: 3% 5%;
+        width: 88%;
+        margin-top: 10%;
         position: relative;
     }
 
-    .pic-1, .pic-2, .pic-3, .pic-4 { 
-        margin: 5%;
+    .container-portfolio {
+        width: 88%;
+        margin-top: 10%;
     }
 
-    .china, .portugal, .iceland, .vietnam {
-        width: 27.5%;
+    .con-port {
+        width: 88%;
+        margin-top: 10%;
+        height: 1225px;
+        
+
+    }
+
+    #contact-form {
+        width: 100%;
+        height: 60%;
     }
 
     .form-control {
-        width: 100%;
-        margin-left: 3%;
-        position: absolute;
+        width: 85%;
+        margin-left: 5%;
     }
 
     form .submit {
         width: 20%;
-
     }
 
     .enter-name, .enter-email, .enter-message {
-        margin-left: 3%;
+        margin-left: 5%;
         font-size: 16px;
     }
 
+    .header-content ul {
+        width: 100%;
+        height: px;
+        background-color: white;
+        margin: 0 auto;
+        padding: 20px;
+    }
   }
